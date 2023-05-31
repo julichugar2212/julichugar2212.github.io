@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Encuesta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Encuesta</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
+</head>
+<body>
+    <main>
+        <h4>de juli</h4>
+        <div class="pregresp">
+            <div class="pregunta">1. ¿Crees que HTML es una buena tecnología?<br />
+            </div>
+            <div class="respuestas">
+              <input type="radio" name="preg1" value="1" /> Sí<br />
+              <input type="radio" name="preg1" value="2" /> No<br />
+              <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+            </div>
+        <p>cuanto queres a juli?</p>
+        <p>
+            <button id="showalert" type="button">mucho</button>
+            <button id="showaconfirm" type="button">demasiado</button>
+        </p>
+        
+    </main>
+    <script src="src/liwindow.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            //Creamos nuestro alert personalizado y lo asignamos a un boton
+            const myalert = new lialert("Este Script comprimido usa solo 5KB");
+            document.querySelector("#showalert").addEventListener("click", myalert.show);
+
+
+            //Creamos otro confirm personalizado que usaremos mas adelante
+            const accionConfirmada = new lialert("El archivo se ha eliminado correctamente!");
+
+            //Creamos nuestro confirm personalizado y lo asignamos a un boton
+            const myconfirm = new liconfirm({
+                header: "Estas a punto de eliminar un archivo",
+                body: "Realmente deseas continuar?",
+                action: (result) => {
+                    if (result) accionConfirmada.show();
+                }
+            });
+            document.querySelector("#showaconfirm").addEventListener("click", myconfirm.show);
+
+        });
+    </script>
+
+  </div>
+  <label for="favcity">Elige tu favorita</label>
+  <select id="favcity" name="select">
+  <option value="1">juli</option>
+  <option value="2">hamburguesa</option>
+  <option value="3">juli</option>
+  <option value="4">pancho con nachos</option>
+  <option value="5">juuuli</option>
+  <option value="6">chocolate</option>
+  <option value="7">river</option>
+  <option value="8">lechuga</option>
+ 
+  </select>
+<div>
+    <fieldset>
+        <legend>Seleccione sus ingredientes para pizzas:</legend>
+        <input id="ham" type="checkbox" name="toppings" value="ham" />
+        <label for="ham">Jamón</label><br />
+        <input id="pepperoni" type="checkbox" name="toppings" value="pepperoni" />
+        <label for="pepperoni">Queso</label><br />
+        <input id="mushrooms" type="checkbox" name="toppings" value="mushrooms" />
+        <label for="mushrooms">Champiñones</label><br />
+        <input id="olives" type="checkbox" name="toppings" value="olives" />
+        <label for="olives">ACEITUNAS</label>
+        </fieldset>
+</div>
+<div>
+    <label for="address">Sugerencias</label><br />
+<textarea id="address" name="addresstext"></textarea>
+</div>
+<div>
+ <img src="./images/romaine-large.jpg">
+<div>
+<input type="submit" name="submit" value="Enviar"  />
+<input type="reset" name="reset" value="Empezar de vuelta" />
+</div>
+
+</body>
+</html>
